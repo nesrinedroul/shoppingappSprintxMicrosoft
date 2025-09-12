@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingmobapp/pages/signin.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -157,7 +158,9 @@ class SplashScreen extends StatelessWidget {
                
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/home');
+                    Navigator.push(context, 
+                    MaterialPageRoute(builder: (context) => const Signin())
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
