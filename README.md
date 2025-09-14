@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # shoppingmobapp
 
-A new Flutter project.
+A Flutter project for the sprintsXmicrosoft course.
 
 ## Getting Started
 
@@ -18,4 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 =======
 # shoppingappSprintxMicrosoft
 a shopping appas the final project for the mobile dev bootcamp by sprint x microsoft
->>>>>>> 5b24745df6f253780cc828beeacfc3f90f1daf80
+
