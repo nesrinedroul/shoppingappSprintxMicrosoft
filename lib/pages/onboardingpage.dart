@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingmobapp/pages/signin.dart';
 
 class OnboardingPage extends StatelessWidget {
   final String backgroundImage;
@@ -31,18 +32,33 @@ class OnboardingPage extends StatelessWidget {
           fit: BoxFit.cover,
           opacity: 0.55,
         ),
-        color: Colors.black, // fallback color
+        color: const Color.fromARGB(255, 20, 122, 0), // fallback color
       ),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Signin()),
+                );
+              },
+              child: Text(
+                'Skip',
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                  fontSize: 16,
+                ),
+              ),
+            ),
             Container(
               decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,
-                    blurRadius: 82,
+                    blurRadius: 92,
                     offset: Offset(4, 4),
                   ),
                 ],
