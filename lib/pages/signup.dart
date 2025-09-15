@@ -26,94 +26,100 @@ class Signup extends StatelessWidget {
                       Image.asset('assets/logo.png', width: 200, height: 200),
                       SizedBox(height: 16),
                       Text(
-                      'Sign Up Page',
-                      style: Theme.of(context).textTheme.headlineMedium,
-                    ),
-                    SizedBox(height: 16),
-                    TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(35.0),
-                        ),
-                  
-                        labelText: 'Username',
+                        'Sign Up Page',
+                        style: Theme.of(context).textTheme.headlineMedium,
                       ),
-                    ),
-                    SizedBox(height: 20),
-                     TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(35.0),
-                        ),
-                        labelText: 'Email',
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                     TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(35.0),
-                        ),
-                        labelText: 'Password',
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(35.0),
-                        ),
-                        labelText: 'Confirm Password',
-                      ),
-                    ),
-                   
-                   
-                    SizedBox(height: 16),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const HomePage()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(horizontal: 92, vertical: 18),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        backgroundColor: Color.fromARGB(255, 238, 137, 5),
-                      ),
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                      SizedBox(height: 16),
+                      TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(35.0),
+                          ),
+
+                          labelText: 'Username',
                         ),
                       ),
-                    ),
-                    SizedBox(height: 16),
-                    
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('Already have an account?'),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(builder: (context) => const Signin()),
-                            );
-                          },
-                          child: Text('Sign in'),
+                      SizedBox(height: 20),
+                      TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(35.0),
+                          ),
+                          labelText: 'Email',
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      SizedBox(height: 20),
+                      TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(35.0),
+                          ),
+                          labelText: 'Password',
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(35.0),
+                          ),
+                          labelText: 'Confirm Password',
+                        ),
+                      ),
+
+                      SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 92,
+                            vertical: 18,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          backgroundColor: Color.fromARGB(255, 238, 137, 5),
+                        ),
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text('Already have an account?'),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Signin(),
+                                ),
+                              );
+                            },
+                            child: Text('Sign in'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

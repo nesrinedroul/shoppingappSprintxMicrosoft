@@ -11,7 +11,7 @@ class OnboardingPage extends StatelessWidget {
   final bool isDarkText; // for white vs black text depending on bg
 
   const OnboardingPage({
-    Key? key,
+    super.key,
     required this.backgroundImage,
     required this.centerImage,
     required this.title,
@@ -19,7 +19,7 @@ class OnboardingPage extends StatelessWidget {
     required this.buttonText,
     required this.onPressed,
     this.isDarkText = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
