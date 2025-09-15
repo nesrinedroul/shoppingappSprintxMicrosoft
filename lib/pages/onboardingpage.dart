@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:shoppingmobapp/pages/signin.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -23,7 +24,7 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textColor = isDarkText ? Colors.black : Colors.white;
+    final textColor = isDarkText ? CupertinoColors.black : CupertinoColors.white;
 
     return Container(
       decoration: BoxDecoration(
@@ -38,30 +39,30 @@ class OnboardingPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton(
+            CupertinoButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Signin()),
-                );
+          Navigator.push(
+            context,
+            CupertinoPageRoute(builder: (context) => const Signin()),
+          );
               },
-              child: Text(
-                'Skip',
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                  fontSize: 16,
-                ),
+              child: const Text(
+          'Skip',
+          style: TextStyle(
+            color: CupertinoColors.white,
+            fontSize: 16,
+          ),
               ),
             ),
             Container(
               decoration: const BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 92,
-                    offset: Offset(4, 4),
-                  ),
-                ],
+          boxShadow: [
+            BoxShadow(
+              color: CupertinoColors.black,
+              blurRadius: 92,
+              offset: Offset(4, 4),
+            ),
+          ],
               ),
               child: Image.asset(centerImage, width: 300, height: 300),
             ),
@@ -69,53 +70,49 @@ class OnboardingPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18.0),
               child: Text(
-                title,
-                style: TextStyle(
-                  color: textColor,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
+          title,
+          style: TextStyle(
+            color: textColor,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18.0),
               child: Text(
-                description,
-                style: TextStyle(
-                  color: textColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w200,
-                ),
-                textAlign: TextAlign.center,
+          description,
+          style: TextStyle(
+            color: textColor,
+            fontSize: 16,
+            fontWeight: FontWeight.w200,
+          ),
+          textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(height: 90),
-            ElevatedButton(
+            CupertinoButton(
               onPressed: onPressed,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: const Color.fromARGB(255, 0, 175, 47),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 50,
-                  vertical: 15,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
+              color: CupertinoColors.white,
+              padding: const EdgeInsets.symmetric(
+          horizontal: 50,
+          vertical: 15,
               ),
+              borderRadius: BorderRadius.circular(30),
               child: Text(
-                buttonText,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+          buttonText,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 0, 175, 47),
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
               ),
             ),
           ],
+        )
         ),
-      ),
-    );
+      );
   }
 }

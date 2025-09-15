@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:shoppingmobapp/pages/homepage.dart';
 import 'package:shoppingmobapp/pages/signup.dart';
 
@@ -7,100 +8,100 @@ class Signin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.white,
+    return CupertinoPageScaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 193, 107),
+      child: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height - kToolbarHeight,
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(height: 40),
-                Image.asset('assets/logo.png', width: 250, height: 250),
-                SizedBox(height: 20),
-                Text(
-                  'Sign In Page',
-                  style: Theme.of(context).textTheme.headlineMedium,
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              const SizedBox(height: 40),
+              Image.asset('assets/logo.png', width: 250, height: 250),
+              const SizedBox(height: 20),
+              Text(
+                'Sign In Page',
+                style: CupertinoTheme.of(context)
+                    .textTheme
+                    .navLargeTitleTextStyle,
+              ),
+              const SizedBox(height: 30),
+              CupertinoTextField(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                placeholder: 'Username',
+                decoration: BoxDecoration(
+                  color: CupertinoColors.extraLightBackgroundGray,
+                  border: Border.all(color: CupertinoColors.systemGrey),
+                  borderRadius: BorderRadius.circular(35.0),
                 ),
-                SizedBox(height: 20),
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(35.0),
+              ),
+              const SizedBox(height: 20),
+              CupertinoTextField(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                placeholder: 'Password',
+                obscureText: true,
+                decoration: BoxDecoration(
+                  color: CupertinoColors.extraLightBackgroundGray,
+                  border: Border.all(color: CupertinoColors.systemGrey),
+                  borderRadius: BorderRadius.circular(35.0),
+                ),
+              ),
+              const SizedBox(height: 30),
+              CupertinoButton.filled(
+                borderRadius: BorderRadius.circular(50.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 92, vertical: 18),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const HomePage(),
                     ),
-
-                    labelText: 'Username',
+                  );
+                },
+                child: const Text(
+                  'Sign In',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: CupertinoColors.white,
                   ),
                 ),
-                SizedBox(height: 20),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(35.0),
-                    ),
-                    labelText: 'Password',
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Don\'t have an account?'),
+                  CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => const Signup(),
+                        ),
+                      );
+                    },
+                    child: const Text('Sign Up'),
                   ),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 92, vertical: 18),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    backgroundColor: Color.fromARGB(255, 238, 137, 5),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Forgot your password?'),
+                  CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {
+                      // TODO: Handle forgot password
+                    },
+                    child: const Text('Reset Password'),
                   ),
-                  child: Text(
-                    'Sign In',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text('Don\'t have an account?'),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Signup()),
-                    );
-                      },
-                      child: Text('Sign Up'),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text('Forgot your password?'),
-                    TextButton(
-                      onPressed: () {
-                        // Handle forgot password action
-                      },
-                      child: Text('Reset Password'),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

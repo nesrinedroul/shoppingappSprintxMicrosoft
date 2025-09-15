@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+
+import 'package:flutter/cupertino.dart';
 
 import 'package:shoppingmobapp/pages/splashscreen.dart';
 
@@ -13,12 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: GoogleFonts.ubuntuTextTheme(),
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 96, 9, 247)),
+      theme: CupertinoThemeData(
+        primaryColor: const Color.fromARGB(255, 96, 9, 247),
       ),
       home: const SplashScreen(),
     );

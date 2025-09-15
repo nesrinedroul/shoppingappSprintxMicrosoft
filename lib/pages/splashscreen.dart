@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:shoppingmobapp/pages/signin.dart';
 import 'onboardingpage.dart'; // import the widget
 
@@ -30,9 +30,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-      body: PageView(
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Onboarding'),
+      ),
+      child: PageView(
         controller: _pageController,
         onPageChanged: (index) {
           setState(() {
@@ -83,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Signin()),
+                CupertinoPageRoute(builder: (context) => const Signin()),
               );
             },
           ),
